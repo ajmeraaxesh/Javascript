@@ -1,0 +1,29 @@
+<!--
+	Demonstrates  use of Functions in Javascript
+-->
+<html>
+	<head>
+		<script type = "text/javascript">
+		//<![CDATA[
+		
+		function sayHello1(name){
+			console.log("Hello "+name);
+		}
+		
+		sayHello1("Axesh");
+		
+		var sayHello2 = function(name){
+							console.log("Hello "+name);
+						}
+						
+		sayHello2("Rajesh");
+		
+		var sayHello3 = new Function("name","console.log('Hello '+name);");
+		
+		sayHello3("Ajmera");
+		
+		
+		//]]>
+		</script>
+	</head>
+</html>

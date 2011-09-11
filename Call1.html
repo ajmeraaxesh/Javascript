@@ -1,0 +1,37 @@
+<!--
+	Demonstrates  use of call method of  "Function" object
+	
+-->
+<html>
+	<head>
+		<script type = "text/javascript">
+		//<![CDATA[
+		
+		function sayQuote(){
+			console.log("Quote: '"+this.quote+"'");
+		}
+		
+		//Creating different objects of author
+		var quote1 = {
+			"quote"	:"Who will cry",
+			"func"	:sayQuote
+		}
+		
+		var quote2 = {
+			"quote"	:"When you die",
+			"func"	:sayQuote
+		}
+		
+		quote1.func();
+		quote2.func();
+		
+		var quote3 = {
+			"quote":"ROBIN SHARMA"
+		}
+		
+		sayQuote.call(quote3);
+		
+		//]]>
+		</script>
+	</head>
+</html>

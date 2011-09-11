@@ -1,0 +1,70 @@
+<!--
+	Demonstrates use of which Functions in Javascript
+	
+-->
+<html>
+	<head>
+		<script type = "text/javascript">
+		//<![CDATA[
+		//Assigning anonymous functions to variable 
+		var sayName1 = function(name){
+			console.log("Hello "+name);
+		}
+		
+		sayName1("Axesh");
+		
+		//Passing function as an arguement to anotherFunction
+		function square(num){
+			return num * num;
+		}
+		
+		function performOp(oper,num){
+			return oper(num);
+		}
+		
+		console.log("Passing function as an argument to another Function "+performOp(square,25));
+		
+		//Function returning another function
+		function createIncrementor(){
+			return function(x){ return x+1; };
+		}
+		
+		var inc = createIncrementor();
+		console.log("Function returning another function "+inc(10));
+		
+		//Functions stored inside array
+		var arr = [];
+		arr[0] = function(x){
+			 		return x * x;
+				};
+				
+		arr[1] = arr[0](2);
+		arr[2] = arr[0](arr[1]);
+		
+		console.log("Functions stored inside array "+arr[2]);
+		
+		//Functions stored a objects
+		var Person = {
+						"sayName" 	: 	function(name){
+											console.log("Hello "+name);
+										},
+						age			: 	25,
+						sayAge		: 	function(){
+											console.log("Age is "+this.age);
+											},
+						teaches		:  	"CS50",
+						saySubject	: 	function(){
+											console.log("Teaches "+this.teaches);
+										}
+								
+					}
+	
+		Person.sayName("David");
+		Person.sayAge();
+		Person.saySubject();
+		
+		
+		//]]>
+		</script>
+	</head>
+</html>

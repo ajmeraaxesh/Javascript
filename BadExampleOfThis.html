@@ -1,0 +1,43 @@
+<!--
+	Demonstrates  use of Trampling with Global Object
+	Shows how a function in which "this" is referred and when it is called without referring to an object.It affects global object
+	
+-->
+<html>
+	<head>
+		<script type = "text/javascript">
+		//<![CDATA[
+			
+			console.log("Calling default isNaN "+isNaN(NaN));
+			
+			function changeisNaN(){
+				this.isNaN = function(){
+								return "If this function is called directly without creating object then it will affect default isNaN";
+							};
+							
+				this.test= function(){
+								console.log("Executing test");
+							};
+			}
+			
+			console.log("Changing isNaN...");
+			changeisNaN();
+			console.log("Called isNaN");
+			console.log("Now isNaN is "+isNaN(NaN));
+			/*
+			alert("NaN is NaN: " + isNaN(NaN));
+
+			function x() {
+			    this.isNaN = function() { 
+			        return "not anymore!";
+			    };
+			}
+			// alert!!! trampling the Global object!!!
+			x();
+
+			alert("NaN is NaN: " + isNaN(NaN));
+			*/
+		//]]>
+		</script>
+	</head>
+</html>

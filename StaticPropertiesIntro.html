@@ -1,0 +1,24 @@
+<!--
+	Demonstrates  use of Static Properties or Function Properties in Javascript
+	
+-->
+<html>
+	<head>
+		<script type = "text/javascript">
+		//<![CDATA[
+			
+			function Person(){
+				console.log("Person created");
+			}
+			
+			Person.na = "David Malan";
+			Person.age = 35;
+			
+			console.log("Name: "+Person.na);
+			console.log("Age: "+Person["age"]);
+			
+			
+		//]]>
+		</script>
+	</head>
+</html>

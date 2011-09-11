@@ -1,0 +1,26 @@
+<!--
+	Demonstrates  use of Creating Objects in different way
+	
+-->
+<html>
+	<head>
+		<script type = "text/javascript">
+		//<![CDATA[
+			
+			var obj1 = new Object();
+			obj1.time = new Date();
+			console.log('Time1 :- '+obj1.time);
+			
+			var obj2 = {};
+			obj2["time"] = new Date();
+			console.log('Time2 :- '+obj2.time);
+			
+			var obj3 = {
+							"time":new Date()
+						};
+			console.log("Time3: "+obj3.time);
+			
+		//]]>
+		</script>
+	</head>
+</html>
